@@ -1,0 +1,1 @@
+Starter template for building a new [Aerobatic](http://www.aerobatic.io) HTML5 single page app. 

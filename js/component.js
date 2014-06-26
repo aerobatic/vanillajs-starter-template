@@ -1,4 +1,3 @@
-
 (function() {
-  console.log("component.js");
+  console.log("This is from component.js");
 })();

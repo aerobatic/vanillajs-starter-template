@@ -1,3 +1,3 @@
 (function() {
-  console.log("main.js");
+  console.log("This is from main.js");
 })();

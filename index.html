@@ -1,24 +1,43 @@
+<!--
+Aerobatic is designed for single page applications. This index.html
+serves as the main entry page that is loaded when your application is
+hit via the a URL like http://<your_app_name>.aerobaticapp.com.
+-->
+
 <html>
   <head>
-    <title>Hello from Aerobatic</title>
+    <title>Aerobatic Starter Template</title>
 
-    <link data-aero-cdn="true" rel="Stylesheet" href="dist/styles.css">
-  	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="favicons/apple-touch-icon-152x152-precomposed.png">
-  	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="favicons/apple-touch-icon-120x120-precomposed.png">
-  	<link rel="apple-touch-icon-precomposed" sizes="76x76" href="favicons/apple-touch-icon-76x76-precomposed.png">
-  	<link rel="apple-touch-icon-precomposed" sizes="60x60" href="favicons/apple-touch-icon-60x60-precomposed.png">
-  	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="favicons/apple-touch-icon-144x144-precomposed.png">
-  	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="favicons/apple-touch-icon-114x114-precomposed.png">
-  	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="favicons/apple-touch-icon-72x72-precomposed.png">
-  	<link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-touch-icon.png">
-  	<link rel="shortcut icon" href="favicons/favicon.ico">
-  	<link rel="icon" type="image/png" sizes="64x64" href="favicons/favicon.png">
+    <!--
+    Serve the original CSS in debug builds and a consolidated
+    minfied one for release builds.
+    -->
+    <link data-aero-build="release" rel="Stylesheet" href="dist/app.min.css">
+    <link data-aero-build="debug" rel="Stylesheet" href="css/main.css">
+
+  	<link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
   </head>
   <body>
-    <h2>Hello World!!!!</h2>
-    <div>This is some more content</div>sadfasdf
+    <div id="centered">
+      <img class="logo" src="images/logo.png">
+      <h1>Aerobatic Starter Template</h1>
+    </div>
 
-    <script data-aero-cdn="" data-aero-build="release" src="dist/app.min.js"></script>
-    <script data-aero-build="debug" src="js/main.js"></script>
+    <!--
+    Here you might declare 3rd party library scripts. You could point
+    to a public CDN or to local copies, perhaps managed through bower.
+    -->
+
+    <!--
+    For release builds the grunt file combines and
+    minifies all scripts into a single app.min.js
+    -->
+    <script data-aero-build="release" src="dist/app.min.js"></script>
+
+    <!-- Individual scripts are only rendered in debug mode -->
+    <div data-aero-build="debug">
+      <script src="js/main.js"></script>
+      <script src="js/main.js"></script>
+    </div>
   </body>
 </html>

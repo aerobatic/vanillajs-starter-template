@@ -1,56 +1,65 @@
 module.exports = function(grunt) {
   grunt.initConfig({
-    favicons: {
-      options: {
-        appleTouchBackgroundColor: "#ffffff",
-        html: 'index.html',
-        HTMLPrefix: 'favicons/',
-        windowsTile: false
-      },
-      icons: {
-        src: 'favicon.png',
-        dest: 'favicons'
-      }
+    jshint: {
+      all: ['Gruntfile.js', 'js/**/*.js']
     },
     uglify: {
       build: {
         files: {
-          'dist/app.min.js': ['js/main.js', 'js/component.js']
+          'dist/app.min.js': ['js/**/*.js']
         }
       }
     },
-    stylus: {
-      compile: {
+    // If you are using a
+    cssmin: {
+      combine: {
         files: {
-          'dist/styles.css': ['styl/*.styl'] // compile and concat into single file
+          'app.min.css': ['css/main.css']
         }
       }
     },
     watch: {
-      scripts: {
-        files: ['**/*.js'],
-        tasks: ['uglify', 'stylus']
+      options: {
+        spawn: true,
+        livereload: true
       },
+      index: {
+        files: ['index.html']
+      },
+      css: {
+        files: ['css/*.css'],
+        livereload: true
+      },
+      scripts: {
+        files: ['js/**/*.js'],
+        tasks: ['uglify']
+      }
     },
     aerobatic: {
-      push: {
-        files: ['*.html', 'dist/*.*'],
+      // These are the files that should be deployed to the cloud.
+      deploy: {
+        src: ['index.html', 'dist/*.*', 'images/*', 'favicon.*'],
       },
       sim: {
         index: 'index.html',
-        port: 3000
+        port: 3000,
+        livereload: true
       }
     }
   });
 
-  grunt.registerTask('sim', ['aerobatic:sim']);
-  grunt.registerTask('push', ['aerobatic:push']);
 
-  grunt.loadNpmTasks('grunt-favicons');
-  // grunt.loadNpmTasks('grunt-aerobatic');
-  grunt.loadTasks('../grunt-aerobatic/tasks');
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-stylus');
+  grunt.registerTask('build', ['jshint', 'uglify', 'cssmin']);
+
+  // Specify the sync option to avoid blocking the watch task
+  grunt.registerTask('sim', ['aerobatic:sim:sync', 'watch']);
+
+  // Create a deploy alias task which builds then deploys to aerobatic in the cloud
+  grunt.registerTask('deploy', ['build', 'aerobatic:deploy']);
+
+  grunt.loadNpmTasks('grunt-aerobatic');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
 };

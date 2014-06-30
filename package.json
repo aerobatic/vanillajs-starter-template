@@ -15,7 +15,7 @@
     "grunt-contrib-watch": "^0.6.1",
     "grunt-contrib-sass": "^0.7.3",
     "grunt-jslint": "^1.1.12",
-    "grunt-aerobatic": "^0.1.4",
+    "grunt-aerobatic": "^0.1.6",
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-cssmin": "^0.10.0"
   },

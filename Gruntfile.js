@@ -38,7 +38,7 @@ module.exports = function(grunt) {
     aerobatic: {
       // These are the files that should be deployed to the cloud.
       deploy: {
-        src: ['index.html', 'dist/*.*', 'images/*', 'favicon.*'],
+        src: ['index.html', 'dist/*.*', 'images/*', 'favicon.*']
       },
       sim: {
         index: 'index.html',

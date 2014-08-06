@@ -4,19 +4,18 @@
   "description": "Basic starter template for new Aerobatic app",
   "main": "Gruntfile.js",
   "scripts": {
-    "test": "grunt test"
+    "test": "gulp test"
   },
   "author": "David Von Lehman",
   "devDependencies": {
     "grunt": "^0.4.5",
-    "grunt-contrib-concat": "^0.4.0",
-    "grunt-contrib-stylus": "^0.17.0",
-    "grunt-contrib-uglify": "^0.5.0",
     "grunt-contrib-watch": "^0.6.1",
-    "grunt-contrib-sass": "^0.7.3",
-    "grunt-jslint": "^1.1.12",
     "grunt-aerobatic": "*",
-    "grunt-contrib-jshint": "^0.10.0",
-    "grunt-contrib-cssmin": "^0.10.0"
+    "grunt-gulp": "^0.1.0",
+    "gulp-uglify": "^0.3.1",
+    "gulp": "^3.8.7",
+    "gulp-jshint": "^1.8.4",
+    "gulp-concat": "^2.3.4",
+    "gulp-minify-css": "^0.3.7"
   }
 }

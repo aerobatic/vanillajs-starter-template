@@ -1,0 +1,13 @@
+{
+  "name": "aerobatic-starter-template",
+  "version": "0.0.1",
+  "homepage": "https://github.com/aerobatic/starter-template",
+  "authors": [
+    "David Von Lehman <david@aerobatic.io>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "normalize-css": "~3.0.1"
+  }
+}

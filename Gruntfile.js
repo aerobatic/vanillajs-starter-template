@@ -38,10 +38,10 @@ module.exports = function(grunt) {
     aerobatic: {
       // These are the files that should be deployed to the cloud.
       deploy: {
+        cowboy: true,
         src: ['index.html', 'dist/*.*', 'images/*', 'favicon.*']
       },
       sim: {
-        index: 'index.html',
         port: 3000,
         livereload: true
       }

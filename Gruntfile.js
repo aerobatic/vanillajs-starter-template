@@ -14,7 +14,7 @@ module.exports = function(grunt) {
     cssmin: {
       combine: {
         files: {
-          'dist/app.min.css': ['css/main.css']
+          'dist/app.min.css': ['bower_components/normalize-css/normalize.css', 'css/main.css']
         }
       }
     },

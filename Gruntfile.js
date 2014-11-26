@@ -14,7 +14,7 @@ module.exports = function(grunt) {
     cssmin: {
       combine: {
         files: {
-          'dist/app.min.css': ['node_modules/normalize.css/normalize.css', 'css/main.css']
+          'dist/app.min.css': ['node_modules/normalize.css/normalize.css', 'app/css/main.css']
         }
       }
     },
@@ -22,9 +22,9 @@ module.exports = function(grunt) {
       // Copy required non-built assets to the dist directory
       dist: {
         files: [
-          {src: 'index.html', dest: 'dist/index.html'},
-          {src: 'favicon.png', dest: 'dist/favicon.png'},
-          {expand: true, src: ['images/**'], dest: 'dist/'}
+          {src: 'app/index.html', dest: 'dist/index.html'},
+          {src: 'app/favicon.png', dest: 'dist/favicon.png'},
+          {expand: true, cwd: 'app', src: ['images/**'], dest: 'dist/'}
         ]
       }
     }
@@ -33,6 +33,7 @@ module.exports = function(grunt) {
   grunt.registerTask('build', ['jshint', 'uglify', 'cssmin', 'copy:dist']);
   
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-jshint');

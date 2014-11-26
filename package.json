@@ -1,11 +1,11 @@
 {
-  "name": "aerobatic-starter-template",
-  "version": "0.0.1",
-  "description": "Basic starter template for new Aerobatic app",
+  "name": "vanillajs-starter",
+  "version": "0.0.2",
+  "description": "Basic starter template for a new Aerobatic app",
   "homepage": "http://www.aerobatic.com",
   "author": {
-    "name" : "David Von Lehman",
-    "email" : "david@aerobatic.com"
+    "name": "David Von Lehman",
+    "email": "david@aerobatic.com"
   },
   "repository": {
     "type": "git",
@@ -23,8 +23,14 @@
     "grunt-contrib-watch": "^0.6.1",
     "grunt-contrib-sass": "^0.7.3",
     "grunt-jslint": "^1.1.12",
-    "grunt-aerobatic": "*",
     "grunt-contrib-jshint": "^0.10.0",
-    "grunt-contrib-cssmin": "^0.10.0"
+    "grunt-contrib-cssmin": "^0.10.0",
+    "grunt-contrib-copy": "^0.7.0"
+  },
+  "dependencies": {
+    "normalize.css": "^3.0.2"
+  },
+  "_aerobatic": {
+    "appId": "f2a24692-6128-4055-8f4e-aa7992865b43"
   }
 }

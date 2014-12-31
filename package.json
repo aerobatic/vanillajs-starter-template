@@ -13,7 +13,8 @@
   },
   "main": "Gruntfile.js",
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test",
+    "build": "grunt build"
   },
   "devDependencies": {
     "grunt": "^0.4.5",

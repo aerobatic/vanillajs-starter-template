@@ -14,50 +14,14 @@ module.exports = function(grunt) {
     cssmin: {
       combine: {
         files: {
-          'dist/app.min.css': ['bower_components/normalize-css/normalize.css', 'css/main.css']
+          'dist/app.min.css': ['node_modules/normalize-css/normalize.css', 'css/main.css']
         }
-      }
-    },
-    watch: {
-      options: {
-        spawn: true,
-        livereload: true
-      },
-      index: {
-        files: ['index.html']
-      },
-      css: {
-        files: ['css/*.css'],
-        livereload: true
-      },
-      scripts: {
-        files: ['js/**/*.js'],
-        tasks: ['uglify']
-      }
-    },
-    aerobatic: {
-      // These are the files that should be deployed to the cloud.
-      deploy: {
-        cowboy: true,
-        src: ['index.html', 'dist/*.*', 'images/*', 'favicon.*']
-      },
-      sim: {
-        port: 3000,
-        livereload: true
       }
     }
   });
 
-
   grunt.registerTask('build', ['jshint', 'uglify', 'cssmin']);
 
-  // Specify the sync option to avoid blocking the watch task
-  grunt.registerTask('sim', ['aerobatic:sim:sync', 'watch']);
-
-  // Create a deploy alias task which builds then deploys to aerobatic in the cloud
-  grunt.registerTask('deploy', ['build', 'aerobatic:deploy']);
-
-  grunt.loadNpmTasks('grunt-aerobatic');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');

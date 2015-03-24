@@ -6,7 +6,7 @@ See it live at http://vanillajs-starter-template.aerobaticapp.com/
 ## Create New App
 
 ~~~
-npm install -g yoke-cli`. 
+npm install -g yoke-cli`
 yoke login
 yoke create-app --github-repo 'aerobatic/vanillajs-starter-template'
 ```

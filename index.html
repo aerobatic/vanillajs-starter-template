@@ -12,7 +12,7 @@ hit via the a URL like http://<your_app_name>.aerobaticapp.com.
     Serve the original CSS in debug builds and a consolidated
     minfied one for release builds.
     -->
-    <link data-aero-build="release" rel="Stylesheet" href="dist/app.min.css">
+    <link data-aero-build="release" rel="Stylesheet" href="app.min.css">
 
     <link data-aero-build="debug" rel="Stylesheet" href="node_modules/normalize-css/normalize.css">
     <link data-aero-build="debug" rel="Stylesheet" href="css/main.css">
@@ -34,7 +34,7 @@ hit via the a URL like http://<your_app_name>.aerobaticapp.com.
     For release builds the grunt file combines and
     minifies all scripts into a single app.min.js
     -->
-    <script data-aero-build="release" src="dist/app.min.js"></script>
+    <script data-aero-build="release" src="app.min.js"></script>
 
     <!-- Individual scripts are only rendered in debug mode -->
     <div data-aero-build="debug">
